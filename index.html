@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAFTECH IT Solutions</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        /* Smooth scroll animation for Safari */
+        @media screen and (-webkit-min-device-pixel-ratio:0) {
+            html {
+                scroll-behavior: smooth;
+            }
+        }
+
+        /* Animate sections on scroll */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-md fixed w-full z-50">
+        <div class="h-1 bg-gray-200">
+            <div id="scroll-progress" class="h-full bg-blue-600 w-0 transition-all duration-300"></div>
+        </div>
+        <nav class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-blue-600">
+                    JAFTECH IT
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-blue-600 transition-all duration-300 hover:-translate-y-1 transform relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-blue-600 hover:after:w-full after:transition-all after:duration-300 group hover:font-semibold">
+                        <span class="relative z-10 group-hover:text-blue-600">Home</span>
+                    </a>
+                    <a href="#services" class="nav-link text-gray-700 transition-all duration-300 hover:-translate-y-1 transform relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-blue-600 hover:after:w-full after:transition-all after:duration-300 group">
+                        <span class="relative z-10 group-hover:text-blue-600 transition-colors duration-300">Services</span>
+                    </a>
+                    <a href="#about" class="nav-link text-gray-700 transition-all duration-300 hover:-translate-y-1 transform relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-blue-600 hover:after:w-full after:transition-all after:duration-300 group">
+                        <span class="relative z-10 group-hover:text-blue-600 transition-colors duration-300">About</span>
+                    </a>
+                    <a href="#contact" class="nav-link text-gray-700 transition-all duration-300 hover:-translate-y-1 transform relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-blue-600 hover:after:w-full after:transition-all after:duration-300 group">
+                        <span class="relative z-10 group-hover:text-blue-600 transition-colors duration-300">Contact</span>
+                    </a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-gray-700" id="mobile-menu-button">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div class="md:hidden hidden" id="mobile-menu">
+                <div class="flex flex-col space-y-4 mt-4 pb-4">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">Home</a>
+                    <a href="#services" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">Services</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">About</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-20 bg-gradient-to-r from-blue-600 to-blue-800 min-h-screen flex items-center">
+        <div class="container mx-auto px-6 py-20">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 text-center md:text-left text-white">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6">JAFTECH IT Solutions</h1>
+                    <h2 class="text-2xl md:text-3xl mb-6">Empowering your business with technology</h2>
+                    <p class="text-lg mb-8">
+                        At JAFTECH IT Solutions, we specialize in delivering a comprehensive range of IT services tailored to meet the unique needs of businesses in Municipality of Surallah and beyond. From software development to IT support, cybersecurity, and digital marketing, our team of experts is dedicated to helping you streamline operations, enhance security, and boost your digital presence.
+                    </p>
+                    <a href="#services" class="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-blue-100 transition-colors inline-block">
+                        Explore Our Services
+                    </a>
+                </div>
+                <div class="md:w-1/2 mt-12 md:mt-0">
+                    <img src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg" alt="IT Solutions Team" class="rounded-lg shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50 animate-on-scroll">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12">Our Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Software Development -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 animate-on-scroll flex flex-col h-full transform hover:-translate-y-2" style="transition-delay: 0.1s">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Software Development</h3>
+                    <p class="text-gray-600 mb-6">Custom software solutions tailored to your business needs, from web applications to mobile apps.</p>
+                    <div class="mt-8">
+                        <button onclick="openModal('Software Development')" class="w-full bg-blue-600 text-white px-6 py-4 rounded-lg hover:bg-blue-700 transform hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2 text-lg font-semibold shadow-lg hover:shadow-xl cursor-pointer">
+                            <span>Book Appointment</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- IT Support -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 animate-on-scroll flex flex-col h-full transform hover:-translate-y-1" style="transition-delay: 0.2s">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">IT Support</h3>
+                    <p class="text-gray-600 mb-6">24/7 technical support and maintenance services to keep your systems running smoothly.</p>
+                    <div class="mt-8">
+                        <button onclick="openModal('IT Support')" class="w-full bg-blue-600 text-white px-6 py-4 rounded-lg hover:bg-blue-700 transform hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2 text-lg font-semibold shadow-lg hover:shadow-xl cursor-pointer">
+                            <span>Book Appointment</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Cybersecurity -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 animate-on-scroll flex flex-col h-full transform hover:-translate-y-1" style="transition-delay: 0.3s">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Cybersecurity</h3>
+                    <p class="text-gray-600 mb-6">Comprehensive security solutions to protect your business from cyber threats and data breaches.</p>
+                    <div class="mt-8">
+                        <button onclick="openModal('Cybersecurity')" class="w-full bg-blue-600 text-white px-6 py-4 rounded-lg hover:bg-blue-700 transform hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2 text-lg font-semibold shadow-lg hover:shadow-xl cursor-pointer">
+                            <span>Book Appointment</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Digital Marketing -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 animate-on-scroll flex flex-col h-full transform hover:-translate-y-1" style="transition-delay: 0.4s">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Digital Marketing</h3>
+                    <p class="text-gray-600 mb-6">Strategic digital marketing services to enhance your online presence and reach target audiences.</p>
+                    <div class="mt-8">
+                        <button onclick="openModal('Digital Marketing')" class="w-full bg-blue-600 text-white px-6 py-4 rounded-lg hover:bg-blue-700 transform hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2 text-lg font-semibold shadow-lg hover:shadow-xl cursor-pointer">
+                            <span>Book Appointment</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white animate-on-scroll">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <img src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg" alt="About Us" class="rounded-lg shadow-lg">
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                    <h2 class="text-4xl font-bold mb-6">Why Choose Us?</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-blue-600 mt-1 mr-4"></i>
+                            <p class="text-gray-600">Expert team with years of industry experience</p>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-blue-600 mt-1 mr-4"></i>
+                            <p class="text-gray-600">Customized solutions for your unique business needs</p>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-blue-600 mt-1 mr-4"></i>
+                            <p class="text-gray-600">24/7 support and maintenance services</p>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-blue-600 mt-1 mr-4"></i>
+                            <p class="text-gray-600">Competitive pricing and flexible packages</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50 animate-on-scroll">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12">Get In Touch</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Phone -->
+                <div class="text-center animate-on-scroll" style="transition-delay: 0.1s">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Phone</h3>
+                    <p class="text-gray-600">+63 912 345 6789</p>
+                </div>
+
+                <!-- Email -->
+                <div class="text-center animate-on-scroll" style="transition-delay: 0.2s">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Email</h3>
+                    <p class="text-gray-600">info@jaftechit.com</p>
+                </div>
+
+                <!-- Location -->
+                <div class="text-center animate-on-scroll" style="transition-delay: 0.3s">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Location</h3>
+                    <p class="text-gray-600">Municipality of Surallah</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="mb-8 md:mb-0">
+                    <h3 class="text-2xl font-bold mb-4">JAFTECH IT</h3>
+                    <p class="text-gray-400">Empowering your business with technology solutions that drive growth and success.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li class="text-gray-400">Software Development</li>
+                        <li class="text-gray-400">IT Support</li>
+                        <li class="text-gray-400">Cybersecurity</li>
+                        <li class="text-gray-400">Digital Marketing</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Connect With Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2024 JAFTECH IT Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 100; // Increased offset for better spacing
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    // Add active state to the clicked link with animation
+                    document.querySelectorAll('a[href^="#"]').forEach(a => {
+                        a.classList.remove('text-blue-600', 'after:w-full');
+                        a.classList.add('text-gray-700', 'after:w-0');
+                    });
+                    this.classList.remove('text-gray-700', 'after:w-0');
+                    this.classList.add('text-blue-600', 'after:w-full');
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+
+                    // Add a subtle highlight animation to the target section
+                    target.style.transition = 'background-color 0.5s ease';
+                    target.style.backgroundColor = 'rgba(59, 130, 246, 0.1)'; // Light blue highlight
+                    setTimeout(() => {
+                        target.style.backgroundColor = 'transparent';
+                    }, 1000);
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Scroll progress indicator
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('scroll-progress').style.width = scrolled + '%';
+        });
+
+        // Scroll animation and navigation highlight
+        const observerOptions = {
+            root: null,
+            rootMargin: '-20% 0px -70% 0px',
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    
+                    // Update navigation highlight with enhanced active state
+                    const id = entry.target.getAttribute('id');
+                    if (id) {
+                        document.querySelectorAll('.nav-link').forEach(link => {
+                            const isActive = link.getAttribute('href') === `#${id}`;
+                            link.style.transition = 'all 0.3s ease';
+                            link.classList.remove('text-blue-600', 'after:w-full', 'font-semibold');
+                            link.style.transform = isActive ? 'scale(1.05)' : 'scale(1)';
+                            if (isActive) {
+                                link.classList.add('text-blue-600', 'after:w-full', 'font-semibold');
+                            }
+                        });
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Observe all sections for both animation and navigation highlighting
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.add('animate-on-scroll');
+                observer.observe(section);
+            });
+
+            // Set initial active state based on current scroll position
+            const setInitialActive = () => {
+                const scrollPosition = window.scrollY + window.innerHeight / 3;
+                document.querySelectorAll('section').forEach(section => {
+                    if (section.offsetTop <= scrollPosition && 
+                        (section.offsetTop + section.offsetHeight) > scrollPosition) {
+                        const id = section.getAttribute('id');
+                        document.querySelectorAll('.nav-link').forEach(link => {
+                            link.classList.remove('text-blue-600', 'after:w-full');
+                            if (link.getAttribute('href') === `#${id}`) {
+                                link.classList.add('text-blue-600', 'after:w-full');
+                            }
+                        });
+                    }
+                });
+            };
+            
+            setInitialActive();
+            window.addEventListener('scroll', setInitialActive);
+        });
+        // Booking Modal
+        const modal = document.createElement('div');
+        modal.innerHTML = `
+            <div id="bookingModal" class="fixed inset-0 bg-black bg-opacity-60 hidden items-center justify-center z-50">
+                <div class="bg-white p-8 rounded-xl shadow-2xl max-w-md w-full mx-4 transform transition-all duration-300">
+                    <div class="flex justify-between items-center mb-8">
+                        <h3 class="text-2xl font-bold text-gray-800" id="modalTitle">Book Appointment</h3>
+                        <button onclick="closeModal()" class="text-gray-500 hover:text-gray-700 transition-colors">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <form id="appointmentForm" onsubmit="submitForm(event)" class="space-y-4">
+                        <input type="hidden" id="serviceType" name="serviceType">
+                        <div>
+                            <label for="name" class="block text-gray-700 mb-2">Full Name</label>
+                        <input type="text" id="name" name="name" required
+                            class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-700 mb-2">Email</label>
+                        <input type="email" id="email" name="email" required
+                            class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-gray-700 mb-2">Phone</label>
+                        <input type="tel" id="phone" name="phone" required
+                            class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all">
+                        </div>
+                        <div>
+                            <label for="date" class="block text-gray-700 mb-2">Preferred Date</label>
+                        <input type="date" id="date" name="date" required
+                            class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all">
+                        </div>
+                        <div>
+                            <label for="time" class="block text-gray-700 mb-2">Preferred Time</label>
+                        <input type="time" id="time" name="time" required
+                            class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-700 mb-2">Message</label>
+                        <textarea id="message" name="message" rows="3"
+                            class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all resize-none"></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full bg-blue-600 text-white py-4 px-6 rounded-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-[1.02] font-semibold text-lg shadow-lg hover:shadow-xl">
+                            Submit Appointment
+                        </button>
+                    </form>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(modal);
+
+        function openModal(service) {
+            document.getElementById('modalTitle').textContent = `Book ${service} Appointment`;
+            document.getElementById('serviceType').value = service;
+            document.getElementById('bookingModal').classList.remove('hidden');
+            document.getElementById('bookingModal').classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('bookingModal').classList.add('hidden');
+            document.getElementById('bookingModal').classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
+
+        function submitForm(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData);
+            
+            // Here you would typically send this data to your backend
+            console.log('Appointment Data:', data);
+            
+            // Show success message
+            alert('Appointment request submitted successfully! We will contact you shortly.');
+            
+            // Close modal and reset form
+            closeModal();
+            event.target.reset();
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('bookingModal').addEventListener('click', (e) => {
+            if (e.target.id === 'bookingModal') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
